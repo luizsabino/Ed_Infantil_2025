@@ -7,8 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="/user-add.png">
+
   <style>
-    h4{color: rgb(255, 255, 255);}
+    h4 {
+      color: white;
+      padding: 1rem;
+    }
   </style>
 </head>
 
@@ -18,8 +23,9 @@
     <div class="text-center mb-4">
       <!-- <img src="https://drive.google.com/uc?export=view&id=1GeATbO5fEveDOzmlyJCCsnV4sbYS6SUR" alt="Logo Creche"
         style="max-width: 250px; width: 100%; height: auto;" /> -->
-      <img src="./cabecalho.png" alt="Logo Creche" style="width: 100%; height: auto;" class=""/>
-      <h4 class="my-3 bg-danger">ATENÇÃO! Este é um formulário de testes. As Inscrições NÃO estão sendo coletadas. <br>Aguarde publicação oficial no site da prefeitura.</h4>
+      <img src="./cabecalho1.png" alt="Logo Creche" style="width: 100%; height: auto;" class="" />
+      <h4 class="my-3 bg-danger">ATENÇÃO! Este é um formulário de testes. As Inscrições NÃO estão sendo coletadas.
+        <br>Aguarde publicação oficial no site da prefeitura.</h4>
     </div>
 
     <form id="formInscricao" class="bg-white p-4 rounded shadow-sm">
@@ -255,7 +261,7 @@
       </div>
     </form>
 
-    <h2 class="text-center mt-5 mb-3">Registros</h2>
+    <!-- <h2 class="text-center mt-5 mb-3">Registros</h2>
 
     <div class="table-responsive">
       <table class="table table-striped table-bordered align-middle">
@@ -275,7 +281,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 
   <!-- Bootstrap JS Bundle -->
@@ -398,10 +404,10 @@
     $('#aluno').blur('keyup', (ev) => {
       $('#aluno').val($('#aluno').val().toUpperCase());
     });
-     $('#mae').blur('keyup', (ev) => {
+    $('#mae').blur('keyup', (ev) => {
       $('#mae').val($('#mae').val().toUpperCase());
     });
-     $('#pai').blur('keyup', (ev) => {
+    $('#pai').blur('keyup', (ev) => {
       $('#pai').val($('#pai').val().toUpperCase());
     });
 
