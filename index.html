@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulário de Inscrição - Creche Municipal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container py-4">
+    <!-- Cabeçalho com logo (opcional) -->
+    <div class="text-center mb-4">
+      <!-- <img src="https://drive.google.com/uc?export=view&id=1GeATbO5fEveDOzmlyJCCsnV4sbYS6SUR" alt="Logo Creche"
+        style="max-width: 250px; width: 100%; height: auto;" /> -->
+      <img src="./cabecalho.png" alt="Logo Creche" style="width: 100%; height: auto;" />
+    </div>
+
+    <form id="formInscricao" class="bg-white p-4 rounded shadow-sm">
+      <input type="hidden" name="record_id" id="record_id" />
+
+      <!-- Dados da inscrição -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+          Dados da Criança e Família
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="data_inscricao" class="form-label">Data da Inscrição</label>
+              <input type="date" class="form-control" name="data_inscricao" id="data_inscricao" value="" readonly />
+            </div>
+
+            <div class="col-md-8">
+              <label for="aluno" class="form-label">Nome da Criança *</label>
+              <input type="text" class="form-control" name="aluno" id="aluno" required />
+            </div>
+
+            <div class="col-md-4">
+              <label for="datanascimento" class="form-label">Data de Nascimento *</label>
+              <input type="date" class="form-control" name="datanascimento" id="datanascimento" required />
+            </div>
+
+
+            <!-- Sexo -->
+            <div class="col-md-4">
+              <label for="sexo" class="form-label">Sexo *</label>
+              <select class="form-select" name="sexo" id="sexo" required>
+                <option value="" selected></option>
+                <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label for="cpf_aluno" class="form-label">CPF</label>
+              <input type="text" class="form-control" name="cpf_aluno" id="cpf_aluno" maxlength="14"
+                placeholder="000.000.000-00" />
+            </div>
+
+            <div class="col-md-4">
+              <label for="cor_raca" class="form-label">Cor/Raça *</label>
+              <select class="form-select" name="cor_raca" id="cor_raca" required>
+                <option value="">Selecione</option>
+                <option value="Branca">Branca</option>
+                <option value="Preta">Preta</option>
+                <option value="Parda">Parda</option>
+                <option value="Amarela">Amarela</option>
+                <option value="Indígena">Indígena</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label for="renda_familiar" class="form-label">Renda Familiar</label>
+              <input type="number" class="form-control" name="renda_familiar" id="renda_familiar" min="0" step="0.01"
+                placeholder="R$" />
+            </div>
+
+            <!-- Zona Residencial -->
+            <div class="col-md-4">
+              <label for="zona_residencial" class="form-label">Zona Residencial *</label>
+              <select class="form-select" name="zona_residencial" id="zona_residencial" required>
+                <option value="Urbana" selected>Urbana</option>
+                <option value="Rural">Rural</option>
+              </select>
+            </div>
+
+            <!-- Grupo/Etapa -->
+            <div class="col-md-4">
+              <label for="grupo_etapa" class="form-label">Grupo/Etapa *</label>
+              <select class="form-select" name="grupo_etapa" id="grupo_etapa" required>
+                <option value="" selected></option>
+                <option value="BI">BI</option>
+                <option value="BII">BII</option>
+                <option value="MI">MI</option>
+                <option value="MII">MII</option>
+                <option value="1ª Etapa">1ª Etapa</option>
+                <option value="2ª Etapa">2ª Etapa</option>
+                <option value="Parcial">Parcial</option>
+                <option value="Integral">Integral</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label for="cep" class="form-label">CEP *</label>
+              <input type="text" class="form-control" name="cep" id="cep" required />
+              <div class="form-text">Busca automática pelo CEP</div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="bairro" class="form-label">Bairro *</label>
+              <input type="text" class="form-control" name="bairro" id="bairro" required />
+            </div>
+
+            <div class="col-md-8">
+              <label for="endereco" class="form-label">Endereço *</label>
+              <input type="text" class="form-control" name="endereco" id="endereco" required />
+            </div>
+
+            <div class="col-md-4">
+              <label for="numero" class="form-label">Número *</label>
+              <input type="text" class="form-control" name="numero" id="numero" required />
+            </div>
+
+            <div class="col-md-4">
+              <label for="telefone" class="form-label">Telefone *</label>
+              <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="(99) 99999-9999"
+                required />
+            </div>
+
+            <div class="col-md-4">
+              <label for="whatsapp" class="form-label">Whatsapp</label>
+              <input type="tel" class="form-control" name="whatsapp" id="whatsapp" placeholder="(99) 99999-9999" />
+            </div>
+
+            <div class="col-md-4">
+              <label for="recado" class="form-label">Recado</label>
+              <input type="text" class="form-control" name="recado" id="recado" placeholder="(99) 99999-9999" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dados da mãe -->
+      <div class="card mb-4">
+        <div class="card-header bg-success text-white">Dados da Mãe</div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="mae" class="form-label">Nome *</label>
+              <input type="text" class="form-control" name="mae" id="mae" required />
+            </div>
+
+            <div class="col-md-6">
+              <label for="cpf_mae" class="form-label">CPF</label>
+              <input type="text" class="form-control" name="cpf_mae" id="cpf_mae" maxlength="14"
+                placeholder="000.000.000-00" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="profissao_mae" class="form-label">Profissão *</label>
+              <input type="text" class="form-control" name="profissao_mae" id="profissao_mae" required />
+            </div>
+
+            <div class="col-md-6">
+              <label for="local_trabalho_mae" class="form-label">Local de Trabalho *</label>
+              <input type="text" class="form-control" name="local_trabalho_mae" id="local_trabalho_mae" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dados do pai -->
+      <div class="card mb-4">
+        <div class="card-header bg-info text-white">Dados do Pai</div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="pai" class="form-label">Nome</label>
+              <input type="text" class="form-control" name="pai" id="pai" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="cpf_pai" class="form-label">CPF</label>
+              <input type="text" class="form-control" name="cpf_pai" id="cpf_pai" maxlength="14"
+                placeholder="000.000.000-00" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="profissao_pai" class="form-label">Profissão</label>
+              <input type="text" class="form-control" name="profissao_pai" id="profissao_pai" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="local_trabalho_pai" class="form-label">Local de Trabalho</label>
+              <input type="text" class="form-control" name="local_trabalho_pai" id="local_trabalho_pai" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Observações e outros -->
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">Observações e Outros</div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="observacoes" class="form-label">Observações</label>
+            <textarea class="form-control" name="observacoes" id="observacoes" rows="3"></textarea>
+          </div>
+
+          <div class="row g-3 align-items-center">
+            <div class="col-md-4">
+              <label class="form-label d-block">Cadastro Único *</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="cadastro_unico" id="cadastro_sim" value="Sim"
+                  required />
+                <label class="form-check-label" for="cadastro_sim">Sim</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="cadastro_unico" id="cadastro_nao" value="Não" />
+                <label class="form-check-label" for="cadastro_nao">Não</label>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="cpf_cadastrado" class="form-label">CPF Cadastrado *</label>
+              <input type="text" class="form-control" name="cpf_cadastrado" id="cpf_cadastrado" maxlength="14"
+                placeholder="000.000.000-00" required />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label d-block">Recebe Bolsa Família *</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="recebe_bolsa_familia" id="bolsa_sim" value="Sim"
+                  required />
+                <label class="form-check-label" for="bolsa_sim">Sim</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="recebe_bolsa_familia" id="bolsa_nao" value="Não" />
+                <label class="form-check-label" for="bolsa_nao">Não</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg px-5">Salvar</button>
+      </div>
+    </form>
+
+    <h2 class="text-center mt-5 mb-3">Registros</h2>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Nome</th>
+            <th>Nascimento</th>
+            <th>Mãe</th>
+            <th>Bairro</th>
+            <th>Unidade 1</th>
+            <th style="width: 140px;">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="listaRegistros">
+          <tr>
+            <td colspan="6" class="text-center">Carregando...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/inputmask.min.js"
+    integrity="sha512-eD+19OyeG3GbJ6QGk9uI7TfTozYXAVPz6/Va/YVVuBz7ZFvAeiFzol0whJplf9l6cNQcA8sVxVXvCFW489cAVA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+
+
+    const form = document.getElementById("formInscricao");
+    const lista = document.getElementById("listaRegistros");
+
+    // Seta a data atual no campo data_inscricao ao carregar a página
+    window.onload = () => {
+      const hoje = new Date().toISOString().substring(0, 10);
+      form.data_inscricao.value = hoje;
+
+      Inputmask({ "mask": "(99) 99999-9999" }).mask(document.getElementById('telefone'));
+      Inputmask({ "mask": "(99) 99999-9999" }).mask(document.getElementById('whatsapp'));
+      Inputmask({ "mask": "(99) 99999-9999" }).mask(document.getElementById('recado'));
+
+      listar();
+    };
+
+    function listar() {
+      google.script.run.withSuccessHandler(preencherTabela).listarInscricoes();
+    }
+
+    function preencherTabela(dados) {
+      lista.innerHTML = "";
+      if (dados.length === 0) {
+        lista.innerHTML =
+          "<tr><td colspan='6' class='text-center'>Nenhum registro encontrado</td></tr>";
+        return;
+      }
+      dados.forEach((reg) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${reg.aluno}</td>
+          <td>${reg.datanascimento}</td>
+          <td>${reg.mae}</td>
+          <td>${reg.bairro}</td>
+          <td>${reg.unidade1 || ""}</td>
+          <td>
+            <button class="btn btn-sm btn-info me-2" onclick='editarRegistro(${JSON.stringify(
+          reg
+        )})'>Editar</button>
+            <button class="btn btn-sm btn-danger" onclick="excluirRegistro('${reg.record_id
+          }')">Excluir</button>
+          </td>
+        `;
+        lista.appendChild(tr);
+      });
+    }
+
+    function editarRegistro(reg) {
+      for (let campo in reg) {
+        if (form.elements[campo]) {
+          form.elements[campo].value = reg[campo];
+        }
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function excluirRegistro(id) {
+      if (confirm("Deseja realmente excluir este registro?")) {
+        google.script.run.withSuccessHandler(listar).excluirInscricao(id);
+      }
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const dados = Object.fromEntries(new FormData(form).entries());
+      if (dados.record_id) {
+        google.script
+          .run.withSuccessHandler(() => {
+            form.reset();
+            const hoje = new Date().toISOString().substring(0, 10);
+            form.data_inscricao.value = hoje;
+            listar();
+          })
+          .atualizarInscricao(dados.record_id, dados);
+      } else {
+        google.script
+          .run.withSuccessHandler(() => {
+            form.reset();
+            const hoje = new Date().toISOString().substring(0, 10);
+            form.data_inscricao.value = hoje;
+            listar();
+          })
+          .registrarInscricao(dados);
+      }
+    });
+    //Busca CEP
+    document.getElementById('cep').addEventListener('blur', function () {
+      const cep = this.value.replace(/\D/g, '');
+      if (cep.length !== 8) {
+        alert('CEP inválido. Digite 8 números.');
+        return;
+      }
+
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.erro) {
+            alert('CEP não encontrado.');
+            return;
+          }
+          document.getElementById('endereco').value = data.logradouro || '';
+          document.getElementById('bairro').value = data.bairro || '';
+          // Se quiser preencher cidade e estado, pode criar os campos e preencher aqui.
+        })
+        .catch(() => alert('Erro ao consultar o CEP.'));
+    });
+    //Converte nomes para maiúsculas
+    $('#aluno').blur('keyup', (ev) => {
+      $('#aluno').val($('#aluno').val().toUpperCase());
+    });
+     $('#mae').blur('keyup', (ev) => {
+      $('#mae').val($('#mae').val().toUpperCase());
+    });
+     $('#pai').blur('keyup', (ev) => {
+      $('#pai').val($('#pai').val().toUpperCase());
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
